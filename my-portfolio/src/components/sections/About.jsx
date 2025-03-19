@@ -6,6 +6,8 @@ export const About = () => {
     "Kotlin",
     "Python",
     "C/C++",
+    "HTML",
+    "CSS",
     "JavaScript",
     "SQL",
   ];
