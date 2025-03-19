@@ -21,7 +21,7 @@ export const About = () => {
     "Node.js",
   ];
 
-  const datebaseSkills = ["PostgreSQL", "AWS RDS", "DynamoDB", "MongoDB"];
+  const datebaseSkills = ["PostgreSQL", "AWS RDS", "AWS DynamoDB", "MongoDB"];
 
   const certifications = ["AWS Certified Cloud Practioner"];
 
@@ -51,8 +51,23 @@ export const About = () => {
 
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className="text-gray-300 mb-6">
-              Passionate developer with expertise in building scalable web
-              applications and creating innovative solutions.
+              I am a recent Computer Science graduate from Rutgers University
+              with a strong foundation in software development and
+              problem-solving. I have experience working with a variety of
+              programming languages, frameworks, and databases, which I have
+              applied to personal projects and coursework. My passion lies in
+              building scalable applications, optimizing system performance, and
+              exploring new technologies in application development, cloud
+              computing, and artificial intelligence.
+            </p>
+            <p className="text-gray-300 mb-6">
+              Throughout my academic journey, I have developed projects that
+              showcase my ability to write clean, efficient code and design
+              user-friendly applications. I have also earned certifications like
+              the AWS Certified Cloud Practitioner, further solidifying my cloud
+              computing knowledge. I am currently seeking opportunities where I
+              can apply my skills, collaborate with experienced professionals,
+              and continue growing as a developer.
             </p>
           </div>
 

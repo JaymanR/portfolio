@@ -19,12 +19,12 @@ export const Projects = () => {
                 Project Management Application
               </h3>
               <p className="text-gray-400 mb-4">
-                A Spring Boot-based web application designed to help users
+                A Spring-Boot based web application designed to help users
                 manage projects efficiently. It provides features like project
                 creation, task assignment, and progress tracking. Built with
                 Java, Spring Boot, and Thymeleaf, the app integrates RESTful
-                APIs and uses PostgreSQL as the database for secure and
-                efficient data management.
+                APIs and uses a PostgreSQL database for secure and efficient
+                data management.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {[
@@ -70,8 +70,8 @@ export const Projects = () => {
                 A full-stack web application for a railway booking system.
                 Supports customer reservations, train schedule management, and
                 an employee portal for handling bookings, lookups and customer
-                service. Designed with a relational MySQL database to
-                efficiently manage users, reservations, and train data.
+                service. Connected to a MySQL database to efficiently manage
+                users, reservations, and train data.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Java", "MySQL", "JSP", "HTML", "CSS"].map((tech, key) => (
@@ -194,7 +194,8 @@ export const Projects = () => {
               <h3 className="text-xl font-bold mb-2">Pi Dash</h3>
               <p className="text-gray-400 mb-4">
                 A python based desktop application connecting to a web interface
-                on raspberry pi to provide remote hotkeys on a touchscreen.
+                on a raspberry pi to allow remote hotkey execution and
+                management via a touchscreen.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Python", "JavaScript", "Qt", "Node.js"].map((tech) => (
