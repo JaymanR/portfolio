@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-export const LoadingScreen = ({ onComplete }) => {
+export const LoadingScreen = ({ onComplete, fadeOut = false }) => {
   const [text, setText] = useState("");
   const fullText = "<Hello World />";
+  const [showElements, setShowElements] = useState(true);
 
   useEffect(() => {
     let index = 0;
@@ -14,22 +15,36 @@ export const LoadingScreen = ({ onComplete }) => {
         clearInterval(interval);
 
         setTimeout(() => {
-          onComplete();
-        }, 1000);
+          setShowElements(false);
+
+          setTimeout(() => {
+            onComplete();
+          }, 300);
+        }, 800);
       }
     }, 100);
 
     return () => clearInterval(interval);
-  }, [onComplete]);
+  }, [onComplete, fullText]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
-      <div className="mb-4 text-4xl font-mono font-bold">
-        {text} <span className="animate-blink ml-1"> | </span>
-      </div>
+    <div
+      className={`fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center transition-opacity duration-1000 ${
+        fadeOut ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <div
+        className={`transition-opacity duration-300 ${
+          showElements ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="mb-4 text-4xl font-mono font-bold">
+          {text} <span className="animate-blink ml-1"> | </span>
+        </div>
 
-      <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-        <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
+          <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        </div>
       </div>
     </div>
   );
