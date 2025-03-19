@@ -5,8 +5,34 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #f3f4f6;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+:root {
+  /* Base colors */
+  --color-bg-primary: #0a0c10;
+  --color-bg-secondary: #131620;
+  --color-bg-accent: #1c1f2e;
+  
+  /* Text colors */
+  --color-text-primary: #e2e4f3;
+  --color-text-secondary: #8b93b4;
+  --color-text-accent: #b0b8e3;
+  
+  /* Accent colors */
+  --color-primary: #7667e6;
+  --color-secondary: #4fa6ff;
+  --color-tertiary: #9c5eff;
+  
+  /* Gradient accents */
+  --gradient-accent: linear-gradient(135deg, #7667e6 0%, #4fa6ff 100%);
+  --gradient-highlight: linear-gradient(135deg, #9c5eff 0%, #4fa6ff 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px rgba(9, 10, 18, 0.5);
+  --shadow-md: 0 8px 15px rgba(9, 10, 18, 0.6);
+  --shadow-glow: 0 0 15px rgba(118, 103, 230, 0.4);
 }
 
 @layer utilities {
@@ -23,17 +49,13 @@ body {
   .animate-blink {
     animation: blink 0.8s step-end infinite;
   }
+}
 
-  @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
+@keyframes moveLoadingBar {
+  0% {
+    left: -50%;
   }
-
-  .animate-loading-bar {
-    animation: loading 1.5s ease infinite;
+  100% {
+    left: 100%;
   }
 }

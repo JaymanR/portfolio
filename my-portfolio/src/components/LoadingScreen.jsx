@@ -29,21 +29,49 @@ export const LoadingScreen = ({ onComplete, fadeOut = false }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center transition-opacity duration-1000 ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center transition-opacity duration-1000 ${
         fadeOut ? "opacity-0" : "opacity-100"
       }`}
+      style={{ background: "var(--color-bg-primary)" }}
     >
       <div
-        className={`transition-opacity duration-300 ${
+        className={`transition-opacity duration-300 flex flex-col items-center ${
           showElements ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="mb-4 text-4xl font-mono font-bold">
-          {text} <span className="animate-blink ml-1"> | </span>
+        <div
+          className="mb-4 text-4xl font-mono font-bold text-center w-100"
+          style={{ color: "var(--color-text-primary)" }}
+        >
+          <span
+            style={{
+              background: "var(--gradient-accent)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {text}
+          </span>
+          <span
+            className="animate-blink ml-1"
+            style={{ color: "var(--color-primary)" }}
+          >
+            |
+          </span>
         </div>
 
-        <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
-          <div className="w-[40%] h-full bg-blue-500 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        <div
+          className="w-[200px] h-[2px] rounded relative overflow-hidden"
+          style={{ background: "var(--color-bg-accent)" }}
+        >
+          <div
+            className="h-full w-[40%] absolute"
+            style={{
+              background: "var(--gradient-accent)",
+              boxShadow: "var(--shadow-glow)",
+              animation: "moveLoadingBar 1.5s infinite ease-in-out",
+            }}
+          ></div>
         </div>
       </div>
     </div>
