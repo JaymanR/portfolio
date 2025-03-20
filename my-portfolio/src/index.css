@@ -14,21 +14,21 @@ body {
   --color-bg-primary: #0a0c10;
   --color-bg-secondary: #131620;
   --color-bg-accent: #1c1f2e;
-  
+
   /* Text colors */
   --color-text-primary: #e2e4f3;
   --color-text-secondary: #8b93b4;
   --color-text-accent: #b0b8e3;
-  
+
   /* Accent colors */
   --color-primary: #7667e6;
   --color-secondary: #4fa6ff;
   --color-tertiary: #9c5eff;
-  
+
   /* Gradient accents */
   --gradient-accent: linear-gradient(135deg, #7667e6 0%, #4fa6ff 100%);
   --gradient-highlight: linear-gradient(135deg, #9c5eff 0%, #4fa6ff 100%);
-  
+
   /* Shadows */
   --shadow-sm: 0 4px 6px rgba(9, 10, 18, 0.5);
   --shadow-md: 0 8px 15px rgba(9, 10, 18, 0.6);
@@ -58,4 +58,15 @@ body {
   100% {
     left: 100%;
   }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
